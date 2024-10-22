@@ -1,0 +1,116 @@
+.overlay {
+    position: relative;
+    background: rgba(0, 0, 0, 0.5); /* Black with 50% opacity */
+    backdrop-filter: blur(5px); /* Slight blur effect */
+    padding: 20px; /* Padding around the content */
+    border-radius: 10px; /* Rounded corners */
+    z-index: 1; /* Ensure the overlay is above the video */
+    text-align: center; /* Center text in overlay */
+}
+
+body {
+    font-family: 'Roboto', sans-serif; /* Use the chosen font */
+    background-color: #000000; /* Set black background */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    color: #f1f1f1; /* Light grey text for better visibility */
+    user-select: none;
+    animation: fadeIn 0.75s ease-in-out; /* Speed up fade-in */
+    position: relative; /* Position relative for absolute children */
+    overflow: hidden; /* Hide overflow for video */
+}
+
+.background-video {
+    position: absolute; /* Position video absolutely */
+    top: 0;
+    left: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    object-fit: cover; /* Cover the entire area */
+    z-index: -1; /* Send video to the back */
+}
+
+header, .container {
+    opacity: 0;
+    animation: fadeIn 0.75s ease-in-out forwards; /* Speed up fade-in */
+}
+
+header {
+    margin-bottom: 30px;
+    animation-delay: 0.25s; /* Adjusted delay for header */
+}
+
+h1 {
+    color: #ffcc00; /* Bright yellow for better visibility */
+}
+
+h2 {
+    color: #ffffff; /* White for h2 for better contrast */
+    font-size: 1.2rem; /* Adjusted font size */
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    animation-delay: 0.5s; /* Adjusted delay for container */
+}
+
+footer {
+    position: absolute;
+    bottom: 10px;
+    font-size: 0.9rem;
+    text-align: center;
+    width: 100%;
+    color: #ffffffa0; /* Semi-transparent white for footer */
+}
+
+.btn {
+    display: inline-block;
+    padding: 15px 30px;
+    margin: 10px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    text-align: center;
+    color: #ffffff; /* White text color for buttons */
+    border-radius: 8px;
+    border: none;
+    text-decoration: none;
+    transition: background-color 0.3s ease, transform 0.1s ease;
+    cursor: pointer;
+    width: 250px;
+}
+
+.btn.primary {
+    background-color: #007acc; /* Light blue for primary button */
+}
+
+.btn.secondary {
+    background-color: transparent;
+    border: 2px solid #007acc; /* Light blue border for secondary button */
+    color: #007acc; /* Light blue text for secondary button */
+}
+
+.btn:hover {
+    transform: scale(1.05);
+}
+
+.btn:active {
+    transform: scale(0.95);
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
